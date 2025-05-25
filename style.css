@@ -151,8 +151,10 @@ strong {
     box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
     padding: 40px;
     border-radius: 8px;
-    overflow: hidden; /* Per nascondere il contenuto della lettera inizialmente */
+     /* Per nascondere il contenuto della lettera inizialmente */
     min-height: 400px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
 }
  
 .letter-front::before {
@@ -195,7 +197,7 @@ strong {
     cursor: pointer;
     transition: transform 0.2s ease-in-out; /* Piccola animazione al click */
     position: relative;
-    margin-top: -160px;
+    margin-top: -150px;
     display: block;
     z-index: 9999;
 }
