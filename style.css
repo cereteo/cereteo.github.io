@@ -1,0 +1,261 @@
+body {
+    font-family: 'Great Vibes', cursive;
+ /* Un font classico */
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Sfondo leggero */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+ 
+.letter-container {
+    position: relative;
+    width: 600px;
+    max-width: 90%;
+    background-color: #fcf8e3; /* Colore carta vecchia */
+    border: 1px solid #d4c29c;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    padding: 40px;
+    border-radius: 8px;
+    overflow: hidden; /* Per nascondere il contenuto della lettera inizialmente */
+    min-height: 400px;
+}
+ 
+.letter-front::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 350px solid transparent;
+    border-right: 350px solid transparent;
+    border-top: 300px solid #f7f0d5; /* Colore più chiaro per creare contrasto */
+    z-index: 5;
+}
+
+.letter-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcf8e3; /* Stesso colore della carta */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Assicura che sia sopra il contenuto */
+    transition: opacity 0.8s ease-out; /* Animazione per la scomparsa */
+}
+ 
+.letter-front.opened {
+    opacity: 0;
+    pointer-events: none; /* Disabilita gli eventi mouse quando aperto */
+}
+ 
+.wax-seal {
+    width: 150px; /* Dimensione del sigillo */
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Piccola animazione al click */
+    position: relative;
+    margin-top: -160px;
+    display: block;
+    z-index: 9999;
+}
+ 
+.wax-seal:hover {
+    transform: scale(1.05); /* Effetto hover */
+}
+ 
+.instruction {
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+}
+ 
+.letter-content {
+    /* Il contenuto della lettera è inizialmente nascosto dalla .letter-front */
+    opacity: 0;
+    transform: translateY(20px); /* Effetto di apparizione */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    padding: 0 20px; /* Spazio interno per il testo */
+    text-align: justify;
+    line-height: 1.6;
+    color: #333;
+}
+ 
+.letter-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+.letter-content h1 {
+     /* Un font che simula la scrittura a mano */
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5a3c20;
+}
+ 
+.letter-content p {
+    margin-bottom: 1em;
+}
+
+strong {
+    color: #5a3c20;
+}
+ 
+/* Per il tuo promemoria: ho tenuto a mente il "back" o "sleeves", anche se in questo contesto non c'è una "schiena" fisica della lettera. Se intendessi un modo per "chiudere" o "nascondere" la lettera di nuovo, o un elemento che si avvolge, dovrei aggiungere più HTML e CSS per simulare pieghe o tasche. Per ora, è una semplice apertura frontale. */
+ 
+/* Media Queries per la responsività */
+@media (max-width: 768px) {
+    .letter-container {
+        padding: 20px;
+    }
+ 
+    .wax-seal {
+        width: 120px;
+        height: 120px;
+    }
+ 
+    .letter-content h1 {
+        font-size: 1.8em;
+    }
+}body {
+    font-family: 'Great Vibes', cursive;
+ /* Un font classico */
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Sfondo leggero */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+ 
+.letter-container {
+    position: relative;
+    width: 600px;
+    max-width: 90%;
+    background-color: #fcf8e3; /* Colore carta vecchia */
+    border: 1px solid #d4c29c;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    padding: 40px;
+    border-radius: 8px;
+    overflow: hidden; /* Per nascondere il contenuto della lettera inizialmente */
+    min-height: 400px;
+}
+ 
+.letter-front::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 350px solid transparent;
+    border-right: 350px solid transparent;
+    border-top: 300px solid #f7f0d5; /* Colore più chiaro per creare contrasto */
+    z-index: 5;
+}
+
+.letter-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcf8e3; /* Stesso colore della carta */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Assicura che sia sopra il contenuto */
+    transition: opacity 0.8s ease-out; /* Animazione per la scomparsa */
+}
+ 
+.letter-front.opened {
+    opacity: 0;
+    pointer-events: none; /* Disabilita gli eventi mouse quando aperto */
+}
+ 
+.wax-seal {
+    width: 150px; /* Dimensione del sigillo */
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Piccola animazione al click */
+    position: relative;
+    margin-top: -160px;
+    display: block;
+    z-index: 9999;
+}
+ 
+.wax-seal:hover {
+    transform: scale(1.05); /* Effetto hover */
+}
+ 
+.instruction {
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+}
+ 
+.letter-content {
+    /* Il contenuto della lettera è inizialmente nascosto dalla .letter-front */
+    opacity: 0;
+    transform: translateY(20px); /* Effetto di apparizione */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    padding: 0 20px; /* Spazio interno per il testo */
+    text-align: justify;
+    line-height: 1.6;
+    color: #333;
+}
+ 
+.letter-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+.letter-content h1 {
+     /* Un font che simula la scrittura a mano */
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5a3c20;
+}
+ 
+.letter-content p {
+    margin-bottom: 1em;
+}
+
+strong {
+    color: #5a3c20;
+}
+ 
+/* Per il tuo promemoria: ho tenuto a mente il "back" o "sleeves", anche se in questo contesto non c'è una "schiena" fisica della lettera. Se intendessi un modo per "chiudere" o "nascondere" la lettera di nuovo, o un elemento che si avvolge, dovrei aggiungere più HTML e CSS per simulare pieghe o tasche. Per ora, è una semplice apertura frontale. */
+ 
+/* Media Queries per la responsività */
+@media (max-width: 768px) {
+    .letter-container {
+        padding: 20px;
+    }
+ 
+    .wax-seal {
+        width: 120px;
+        height: 120px;
+    }
+ 
+    .letter-content h1 {
+        font-size: 1.8em;
+    }
+}
